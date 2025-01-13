@@ -11,13 +11,15 @@ import {
   Typography,
   Tab,
   Tabs,
+  CardMedia,
+  CardContent,
+  CardActions,
 } from "@mui/material";
 import DottedMap from "../../assets/dotted_map3.png";
 import StacAi from "../../assets/stac_ai.png";
 import Starks from "../../assets/starks.png";
 import ExePro from "../../assets/exec_pro.png";
 import FundChannel from "../../assets/fund_channel.png";
-import MobileOne from "../../assets/mobile 1.png";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -25,7 +27,8 @@ import "slick-carousel/slick/slick-theme.css";
 import TransformStories from "./TransaformStories";
 import Spotlight from "./Spotlight";
 import { RiStackLine } from "react-icons/ri";
-import { bestCall } from "@/helpers/transformData";
+import { bestCall, blogCard } from "@/helpers/transformData";
+import { GoDotFill } from "react-icons/go";
 
 const LandingPage = () => {
   const sliderImagesOne = [
@@ -443,7 +446,7 @@ const LandingPage = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              padding:"2rem",
+              padding: "2rem",
               background:
                 "linear-gradient(180deg, #030516 0%, #0C2645 1.25%, #0A2548 42.04%, #060E22 90.76%)",
             }}
@@ -471,7 +474,11 @@ const LandingPage = () => {
               <Grid2
                 container
                 spacing={3}
-                sx={{ display: "flex", alignItems: "flex-start", padding:"3rem 0 0 0" }}
+                sx={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  padding: "3rem 0 0 0",
+                }}
               >
                 <Grid2 size={3}>
                   <Stack sx={{ display: "flex", justifyContent: "center" }}>
@@ -516,6 +523,126 @@ const LandingPage = () => {
               </Grid2>
             </Stack>
           </Box>
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          padding: "3rem 7rem 3rem 7rem",
+          background:
+            "linear-gradient(180deg, #0A2548 13.78%, #0C2645 24.31%, #030516 59.76%)",
+        }}
+      >
+        <Grid2
+          container
+          spacing={2}
+          sx={{
+            width: "100%",
+            paddingBottom: "2rem",
+          }}
+        >
+          <Grid2 size={9}>
+            <Typography sx={{ color: "#fff", fontSize: "2.7em" }}>
+              Read our articles, news and product blog
+            </Typography>
+          </Grid2>
+          <Grid2 size={3} sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <Button
+              sx={{
+                background: "#fff",
+                borderRadius: "40px",
+                padding: "0.5rem 1.5rem 0.5rem 1.5rem",
+                fontWeight: 600,
+                color: "primary.main",
+                fontSize: "1.1em",
+                "&:hover": {
+                  background: "#064386",
+                  color: "#fff",
+                },
+              }}
+              endIcon={<BsFillCaretRightFill />}
+            >
+              Visit Blog
+            </Button>
+          </Grid2>
+        </Grid2>
+        <Box sx={{ width: "100%", display: "flex", paddingTop: "3rem" }}>
+          {blogCard?.map((cardDatas) => {
+            return (
+              <Grid2
+                container
+                spacing={2}
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+                key={cardDatas?.id}
+              >
+                <Grid2 size={4}>
+                  <Card
+                    sx={{
+                      // maxWidth: 345,
+                      width: "330px",
+                      height: "400px",
+                      background: "#030516",
+                      borderRadius: "30px",
+                      "&:hover": {
+                        borderBottom: "1px solid #fff",
+                      },
+                    }}
+                  >
+                    <CardMedia
+                      sx={{
+                        height: 180,
+                        "&:hover": {
+                          height: 200,
+                        },
+                      }}
+                      image={cardDatas?.cardImg.src}
+                      title="blog-pics"
+                    />
+                    <CardContent>
+                      <Box
+                        sx={{
+                          borderLeft: "1px solid #fff",
+                          paddingLeft: "0.5rem",
+                          "&:hover": {
+                            paddingLeft: "1.2rem",
+                          },
+                        }}
+                      >
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                          sx={{ color: "#fff" }}
+                        >
+                          {cardDatas?.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{ color: "#fff", fontSize: "1em" }}
+                        >
+                          The Reformist <GoDotFill /> May 29th, 2024
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: "#fff",
+                            fontSize: "1.3em",
+                            paddingTop: "1rem",
+                          }}
+                        >
+                          {cardDatas?.body}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid2>
+              </Grid2>
+            );
+          })}
         </Box>
       </Box>
     </div>

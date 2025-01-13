@@ -12,6 +12,9 @@ import IdeaPics from "../assets/idea_illustrate.png";
 import DesignPics from "../assets/design_illustrate.png";
 import DevelopPics from "../assets/develop_illustrate.png";
 import LaunchPics from "../assets/launch_illustrate.png";
+import Blog1 from "../assets/forcythe_crypto1.png";
+import Blog2 from "../assets/forcythe_ai.png";
+import Blog3 from "../assets/forcythe_crypto2.png";
 
 export const transformData = [
   {
@@ -120,5 +123,26 @@ export const bestCall = [
     id: 3,
     title: "Cost Savings",
     desc: "Maximising impact, minimising costs efficiency is key. We provide cost-effective solutions without compromising on quality.",
+  },
+];
+
+export const blogCard = [
+  {
+    id: 1,
+    title: "Blog",
+    body: "Will AI take over Art",
+    cardImg: Blog1,
+  },
+  {
+    id: 2,
+    title: "Blog",
+    body: "Cryptocurrency vs Tokens",
+    cardImg: Blog2,
+  },
+  {
+    id: 3,
+    title: "Blog",
+    body: "Cryptocurrency and Crypto asset",
+    cardImg: Blog3,
   },
 ];
