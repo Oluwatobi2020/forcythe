@@ -29,6 +29,7 @@ import Spotlight from "./Spotlight";
 import { RiStackLine } from "react-icons/ri";
 import { bestCall, blogCard } from "@/helpers/transformData";
 import { GoDotFill } from "react-icons/go";
+import Footer from "../Footer";
 
 const LandingPage = () => {
   const sliderImagesOne = [
@@ -644,6 +645,71 @@ const LandingPage = () => {
             );
           })}
         </Box>
+
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            paddingTop: "4rem",
+          }}
+        >
+          <Stack
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              sx={{ color: "#1685EC", fontSize: "2.7em", textAlign: "center" }}
+            >
+              Ready to Scale?
+            </Typography>
+            <Typography
+              sx={{
+                color: "#fff",
+                fontSize: "2.7em",
+                textAlign: "center",
+                width: "70%",
+              }}
+            >
+              Join successful brands that chose us as their growth accelerator
+            </Typography>
+            <Box
+              sx={{
+                // border: "1px dashed #fff",
+                // padding: "0 0 0.3rem 0.5rem",
+                // borderRadius: "40px",
+                // "&:hover": {
+                //   border: "1px dashed #064386",
+                // },
+                paddingTop: "2rem",
+              }}
+            >
+              <Button
+                sx={{
+                  fontFamily: "Outfit, serif",
+                  background: "#fff",
+                  borderRadius: "40px",
+                  padding: "0.5rem 1.5rem 0.5rem 1.5rem",
+                  fontWeight: 600,
+                  color: "primary.main",
+                  fontSize: "1.1em",
+                  "&:hover": {
+                    background: "#064386",
+                    color: "#fff",
+                  },
+                }}
+              >
+                Book a call
+              </Button>
+            </Box>
+          </Stack>
+        </Box>
+      </Box>
+      <Box sx={{ padding: "6rem" }}>
+        <Footer />
       </Box>
     </div>
     // <div style={{ background: "#1D1E2E", height: "100vh" }}>
