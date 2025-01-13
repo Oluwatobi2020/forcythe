@@ -1,4 +1,4 @@
-import * as React from "react";
+import {useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import { Tabs, Tab, Box, Card, Grid2, Stack, Typography } from "@mui/material";
 import Image from "next/image";
@@ -34,11 +34,19 @@ function a11yProps(index) {
 }
 
 const TransformStories = () => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setValue((prevValue) => (prevValue + 1) % transformData.length);
+    }, 16000); // 15 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
 
   return (
     <Box>
