@@ -3,10 +3,10 @@ import LandingPage from "./Home";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <LandingPage />
     </div>
   );
-}
+};
 
 export default Home;

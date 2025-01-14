@@ -373,20 +373,24 @@ const LandingPage = () => {
             "linear-gradient(180deg, #030516 0%, #0C2645 53.48%, #0A2548 53.48%, #060E22 112.32%)",
         }}
       >
-        <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: { sm: "column", xs: "column" },
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           {bestCall?.map((mapItems) => {
             return (
               <Grid2
                 container
                 spacing={2}
                 key={mapItems?.id}
-                sx={
-                  {
-                    // display: "flex",
-                    // alignItems: "center",
-                    // justifyContent: "center",
-                  }
-                }
+                sx={{
+                  paddingTop: { sm: "2rem", xs: "2rem" },
+                }}
               >
                 <Grid2
                   size={{ lg: 4, md: 4, sm: 12, xs: 12 }}
@@ -461,8 +465,8 @@ const LandingPage = () => {
           <Box
             sx={{
               borderRadius: "50%",
-              width: "50%",
-              height: "100vh",
+              width: { lg: "50%", md: "50%", sm: "80%", xs: "90%" },
+              height: { lg: "100vh", md: "100vh", sm: "70vh", xs: "60vh" },
               border: "1px solid #fff",
               display: "flex",
               justifyContent: "center",
@@ -482,9 +486,14 @@ const LandingPage = () => {
               <Typography
                 sx={{
                   textAlign: "center",
-                  fontSize: "2em",
+                  fontSize: {
+                    lg: "2em",
+                    md: "1.5em",
+                    sm: "1.3em",
+                    xs: "1.3em",
+                  },
                   color: "#fff",
-                  width: "80%",
+                  width: { lg: "80%", md: "80%", sm: "90%", xs: "90%" },
                 }}
               >
                 We build solutions that help{" "}
@@ -494,16 +503,33 @@ const LandingPage = () => {
 
               <Grid2
                 container
-                spacing={3}
+                // spacing={2}
                 sx={{
                   display: "flex",
                   alignItems: "flex-start",
+                  justifyContent: "center",
                   padding: "3rem 0 0 0",
                 }}
               >
-                <Grid2 size={3}>
-                  <Stack sx={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={{ color: "#1685EC", fontSize: "2.5em" }}>
+                <Grid2 size={{ lg: 3, md: 3, sm: 6, xs: 6 }}>
+                  <Stack
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "#1685EC",
+                        fontSize: {
+                          lg: "2.5em",
+                          md: "2.3em",
+                          sm: "1.8em",
+                          xs: "1.8em",
+                        },
+                      }}
+                    >
                       50+
                     </Typography>
                     <Typography sx={{ color: "#fff", fontSize: "1em" }}>
@@ -511,9 +537,19 @@ const LandingPage = () => {
                     </Typography>
                   </Stack>
                 </Grid2>
-                <Grid2 size={3}>
+                <Grid2 size={{ lg: 3, md: 3, sm: 6, xs: 6 }}>
                   <Stack sx={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={{ color: "#1685EC", fontSize: "2.5em" }}>
+                    <Typography
+                      sx={{
+                        color: "#1685EC",
+                        fontSize: {
+                          lg: "2.5em",
+                          md: "2.3em",
+                          sm: "1.8em",
+                          xs: "1.8em",
+                        },
+                      }}
+                    >
                       120+
                     </Typography>
                     <Typography sx={{ color: "#fff", fontSize: "1em" }}>
@@ -521,9 +557,22 @@ const LandingPage = () => {
                     </Typography>
                   </Stack>
                 </Grid2>
-                <Grid2 size={3}>
+                <Grid2
+                  size={{ lg: 3, md: 3, sm: 6, xs: 6 }}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
                   <Stack sx={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={{ color: "#1685EC", fontSize: "2.5em" }}>
+                    <Typography
+                      sx={{
+                        color: "#1685EC",
+                        fontSize: {
+                          lg: "2.5em",
+                          md: "2.3em",
+                          sm: "1.8em",
+                          xs: "1.8em",
+                        },
+                      }}
+                    >
                       10+
                     </Typography>
                     <Typography sx={{ color: "#fff", fontSize: "1em" }}>
@@ -531,9 +580,19 @@ const LandingPage = () => {
                     </Typography>
                   </Stack>
                 </Grid2>
-                <Grid2 size={3}>
+                <Grid2 size={{ lg: 3, md: 3, sm: 6, xs: 6 }}>
                   <Stack sx={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={{ color: "#1685EC", fontSize: "2.5em" }}>
+                    <Typography
+                      sx={{
+                        color: "#1685EC",
+                        fontSize: {
+                          lg: "2.5em",
+                          md: "2.3em",
+                          sm: "1.8em",
+                          xs: "1.8em",
+                        },
+                      }}
+                    >
                       10+
                     </Typography>
                     <Typography sx={{ color: "#fff", fontSize: "1em" }}>
@@ -562,12 +621,42 @@ const LandingPage = () => {
             paddingBottom: "2rem",
           }}
         >
-          <Grid2 size={9}>
-            <Typography sx={{ color: "#fff", fontSize: "2.7em" }}>
+          <Grid2
+            size={{ lg: 9, md: 9, sm: 12, xs: 12 }}
+            sx={{ paddingBottom: { sm: "1rem", xs: "1rem" } }}
+          >
+            <Typography
+              sx={{
+                color: "#fff",
+                textAlign: {
+                  lg: "left",
+                  md: "left",
+                  sm: "center",
+                  xs: "center",
+                },
+                fontSize: {
+                  lg: "2.7em",
+                  md: "2.4em",
+                  sm: "1.5em",
+                  xs: "1.5em",
+                },
+              }}
+            >
               Read our articles, news and product blog
             </Typography>
           </Grid2>
-          <Grid2 size={3} sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <Grid2
+            size={{ lg: 3, md: 3, sm: 12, xs: 12 }}
+            sx={{
+              display: "flex",
+              justifyContent: {
+                lg: "flex-end",
+                md: "flex-end",
+                sm: "center",
+                xs: "center",
+              },
+            }}
+          >
             <Button
               sx={{
                 background: "#fff",
@@ -587,7 +676,14 @@ const LandingPage = () => {
             </Button>
           </Grid2>
         </Grid2>
-        <Box sx={{ width: "100%", display: "flex", paddingTop: "3rem" }}>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: { sm: "column", xs: "column" },
+            paddingTop: "3rem",
+          }}
+        >
           {blogCard?.map((cardDatas) => {
             return (
               <Grid2
@@ -600,7 +696,7 @@ const LandingPage = () => {
                 }}
                 key={cardDatas?.id}
               >
-                <Grid2 size={4}>
+                <Grid2 size={4} sx={{ paddingTop: { sm: "2rem", xs: "2rem" } }}>
                   <Card
                     sx={{
                       // maxWidth: 345,
@@ -682,16 +778,30 @@ const LandingPage = () => {
             }}
           >
             <Typography
-              sx={{ color: "#1685EC", fontSize: "2.7em", textAlign: "center" }}
+              sx={{
+                color: "#1685EC",
+                fontSize: {
+                  lg: "2.7em",
+                  md: "2.4em",
+                  sm: "1.5em",
+                  xs: "1.5em",
+                },
+                textAlign: "center",
+              }}
             >
               Ready to Scale?
             </Typography>
             <Typography
               sx={{
                 color: "#fff",
-                fontSize: "2.7em",
+                fontSize: {
+                  lg: "2.7em",
+                  md: "2.4em",
+                  sm: "1.5em",
+                  xs: "1.5em",
+                },
                 textAlign: "center",
-                width: "70%",
+                width: { lg: "70%", md: "80%", sm: "90%", xs: "90%" },
               }}
             >
               Join successful brands that chose us as their growth accelerator

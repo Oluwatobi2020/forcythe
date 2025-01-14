@@ -48,12 +48,13 @@ export const NavBar = () => {
         background: "#1D1E2E33",
         backdropFilter: "blur(30px)",
         WebkitBackdropFilter: "blur(30px)",
-        padding: "0rem 3rem 0 3rem",
+        // padding: "0rem 3rem 0 3rem",
         margin: "0 0 3rem 0",
+        width:"100%"
       }}
     >
       <Container
-        maxWidth="xl"
+        // maxWidth="xl"
         sx={{
           //   background: "#1D1E2E26",
           background: "#1D1E2E33",
@@ -62,7 +63,7 @@ export const NavBar = () => {
         }}
       >
         <Toolbar
-          disableGutters
+          // disableGutters
           sx={{
             padding: {
               lg: "1rem 3rem 0 3rem",
@@ -70,7 +71,7 @@ export const NavBar = () => {
               sm: "1rem 1rem 0 1rem",
             },
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: { sm: "space-between", xs: "space-between" },
           }}
         >
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
@@ -102,25 +103,6 @@ export const NavBar = () => {
             </Typography>
           </Box>
           <Box>
-            {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-            {/* <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography> */}
             <Box
               sx={{
                 flexGrow: 1,
@@ -144,6 +126,27 @@ export const NavBar = () => {
                 </Button>
               ))}
             </Box>
+          </Box>
+          <Box >
+            {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+            {/* <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            LOGO
+          </Typography> */}
             <Box sx={{ flexGrow: 0 }}>
               <Box
                 style={{
@@ -198,6 +201,7 @@ export const NavBar = () => {
                     ))}
                   </Menu>
                 </Box>
+
                 <Button
                   sx={{
                     display: { lg: "flex", md: "none", sm: "none", xs: "none" },

@@ -29,7 +29,11 @@ const Footer = () => {
       >
         <Grid2
           size={{ lg: 4.5, md: 4.5, sm: 12, xs: 12 }}
-          sx={{ display: "flex", alignItems: "flex-start" }}
+          sx={{
+            display: "flex",
+            alignItems: "flex-start",
+            paddingBottom: { sm: "1rem", xs: "1rem" },
+          }}
         >
           <Stack>
             <Box
@@ -79,7 +83,13 @@ const Footer = () => {
           }}
         >
           <Stack>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: { sm: "center", xs: "center" },
+              }}
+            >
               <Box sx={{ marginRight: "0.5rem" }}>
                 <Image src={ForcytheDark} alt="logo" width={25} height={25} />
               </Box>
@@ -91,7 +101,16 @@ const Footer = () => {
             </Box>
             <Box sx={{ paddingTop: "2rem" }}>
               <Typography
-                sx={{ color: "#B2B2B2", fontSize: "1em", textAlign: "left" }}
+                sx={{
+                  color: "#B2B2B2",
+                  fontSize: "1em",
+                  textAlign: {
+                    lg: "left",
+                    md: "left",
+                    sm: "center",
+                    xs: "center",
+                  },
+                }}
               >
                 We are the growth company for businesses looking to scale. We
                 are dedicated to transforming businesses with bespoke digital
@@ -99,7 +118,12 @@ const Footer = () => {
               </Typography>
             </Box>
             <Box
-              sx={{ display: "flex", alignItems: "center", paddingTop: "2rem" }}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                paddingTop: "2rem",
+                justifyContent: { sm: "center", xs: "center" },
+              }}
             >
               <Box
                 sx={{
@@ -177,8 +201,14 @@ const Footer = () => {
           size={{ lg: 3, md: 3, sm: 12, xs: 12 }}
           sx={{
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: {
+              lg: "flex-end",
+              md: "flex-end",
+              sm: "center",
+              xs: "center",
+            },
             alignItems: "flex-start",
+            paddingTop: { sm: "2rem", xs: "2rem" },
           }}
         >
           <Stack>
@@ -249,10 +279,15 @@ const Footer = () => {
 
       <Grid2
         container
-        spacing={2}
-        sx={{ borderBottom: "1px solid #60A6E7", padding: "2rem 0 3rem 0" }}
+        sx={{
+          borderBottom: "1px solid #60A6E7",
+          padding: "2rem 0 3rem 0",
+          width: "100%",
+        }}
       ></Grid2>
-      <Typography sx={{ color: "#60A6E7", fontSize: "0.8em", paddingTop:"1rem" }}>
+      <Typography
+        sx={{ color: "#60A6E7", fontSize: "0.8em", paddingTop: "1rem" }}
+      >
         Copyright © 2024 Forcythe. All rights reserved.
       </Typography>
     </Box>
