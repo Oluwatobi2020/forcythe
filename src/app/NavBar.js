@@ -61,70 +61,49 @@ export const NavBar = () => {
           //   WebkitBackdropFilter: "blur(30px)",
         }}
       >
-        <Toolbar disableGutters sx={{ padding: "1rem 3rem 0 3rem" }}>
+        <Toolbar
+          disableGutters
+          sx={{
+            padding: {
+              lg: "1rem 3rem 0 3rem",
+              md: "1rem 3rem 0 3rem",
+              sm: "1rem 1rem 0 1rem",
+            },
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          <Image
-            src={ForcytheLight}
-            alt="forcythe-light"
-            width={30}
-            height={30}
-          />
-          <Typography
-            // variant="h3"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              //   mr: 2,
-              display: { xs: "none", md: "flex" },
-              padding: "0 0 0 0.5rem",
-              fontFamily: "Outfit, serif",
-              fontWeight: 700,
-              fontSize: "1.5em",
-              //   letterSpacing: ".3rem",
-              color: "#fff",
-              textDecoration: "none",
-            }}
-          >
-            forcythe
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
+          <Box>
+            <Image
+              src={ForcytheLight}
+              alt="forcythe-light"
+              width={30}
+              height={30}
+            />
+            <Typography
+              // variant="h3"
+              noWrap
+              component="a"
+              href="#app-bar-with-responsive-menu"
+              sx={{
+                //   mr: 2,
+                // display: { xs: "none", md: "flex", sm:"flex" },
+                padding: "0 0 0 0.5rem",
+                fontFamily: "Outfit, serif",
+                fontWeight: 700,
+                fontSize: "1.5em",
+                //   letterSpacing: ".3rem",
+                color: "#fff",
+                textDecoration: "none",
               }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+              forcythe
+            </Typography>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
+          <Box>
+            {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+            {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -141,58 +120,102 @@ export const NavBar = () => {
             }}
           >
             LOGO
-          </Typography>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              marginLeft: "5rem",
-            }}
-          >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "white",
-                  display: "block",
-                  fontFamily: "Outfit, serif",
-                  fontSize: "1em",
-                }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
+          </Typography> */}
             <Box
-              style={{
-                border: "1px dashed #fff",
-                padding: "0 0 0.3rem 0.5rem",
-                borderRadius: "40px",
-                "&:hover": {
-                  border: "1px dashed #064386",
-                },
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                marginLeft: "5rem",
               }}
             >
-              <Button
-                sx={{
-                  fontFamily: "Outfit, serif",
-                  background: "#fff",
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Outfit, serif",
+                    fontSize: "1em",
+                  }}
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
+            <Box sx={{ flexGrow: 0 }}>
+              <Box
+                style={{
+                  border: { lg: "1px dashed #fff", md: "none" },
+                  padding: "0 0 0.3rem 0.5rem",
                   borderRadius: "40px",
-                  padding: "0.5rem 1.5rem 0.5rem 1.5rem",
-                  fontWeight: 600,
-                  color: "primary.main",
-                  fontSize: "1.1em",
+
+                  display: { lg: "flex", md: "none", sm: "none", xs: "none" },
                   "&:hover": {
-                    background: "#064386",
-                    color: "#fff",
+                    border: "1px dashed #064386",
                   },
                 }}
               >
-                Book a call
-              </Button>
+                <Box
+                  sx={{
+                    flexGrow: 1,
+                    display: { xs: "flex", md: "none", sm: "flex", lg: "none" },
+                  }}
+                >
+                  <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    onClick={handleOpenNavMenu}
+                    color="inherit"
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                  <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorElNav}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "left",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "left",
+                    }}
+                    open={Boolean(anchorElNav)}
+                    onClose={handleCloseNavMenu}
+                    sx={{ display: { xs: "block", md: "none" } }}
+                  >
+                    {pages.map((page) => (
+                      <MenuItem key={page} onClick={handleCloseNavMenu}>
+                        <Typography sx={{ textAlign: "center" }}>
+                          {page}
+                        </Typography>
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </Box>
+                <Button
+                  sx={{
+                    display: { lg: "flex", md: "none", sm: "none", xs: "none" },
+                    background: "#fff",
+                    borderRadius: "40px",
+                    padding: "0.5rem 1.5rem 0.5rem 1.5rem",
+                    fontWeight: 600,
+                    color: "primary.main",
+                    fontSize: "1.1em",
+                    "&:hover": {
+                      background: "#064386",
+                      color: "#fff",
+                    },
+                  }}
+                >
+                  Book a call
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Toolbar>

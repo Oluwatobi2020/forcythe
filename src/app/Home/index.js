@@ -14,6 +14,7 @@ import {
   CardMedia,
   CardContent,
   CardActions,
+  useMediaQuery,
 } from "@mui/material";
 import DottedMap from "../../assets/dotted_map3.png";
 import StacAi from "../../assets/stac_ai.png";
@@ -32,6 +33,8 @@ import { GoDotFill } from "react-icons/go";
 import Footer from "../Footer";
 
 const LandingPage = () => {
+  const matchesOne = useMediaQuery("(max-width:960px)");
+  const matchesTwo = useMediaQuery("(max-width:600px)");
   const sliderImagesOne = [
     {
       id: 1,
@@ -103,7 +106,7 @@ const LandingPage = () => {
             // alignItems: "center",
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
             borderRadius: "50px",
-            padding: "3rem",
+            padding: { lg: "3rem", md: "2rem", sm: "1rem", xs: "1rem" },
             margin: "2rem 0 2rem 0",
           }}
         >
@@ -111,8 +114,13 @@ const LandingPage = () => {
             <Typography
               sx={{
                 color: "#fff",
-                fontSize: "5.5em",
-                textAlign: "left",
+                fontSize: { lg: "5.5em", md: "4.5em", sm: "3em", xs: "2em" },
+                textAlign: {
+                  lg: "left",
+                  md: "left",
+                  sm: "center",
+                  xs: "center",
+                },
                 lineHeight: "5rem",
               }}
             >
@@ -122,10 +130,15 @@ const LandingPage = () => {
             <Typography
               sx={{
                 color: "#B2B2B2",
-                fontSize: "1.3em",
-                textAlign: "left",
+                fontSize: { lg: "1.3em", md: "1.1em", sm: "1em", xs: "1em" },
+                textAlign: {
+                  lg: "left",
+                  md: "left",
+                  sm: "center",
+                  xs: "center",
+                },
                 paddingTop: "1.5rem",
-                width: "85%",
+                width: { lg: "85%", md: "85%", sm: "100%", xs: "100%" },
               }}
             >
               We’re the architects of digital excellence across industries. We
@@ -142,6 +155,8 @@ const LandingPage = () => {
                 //   border: "1px dashed #064386",
                 // },
                 paddingTop: "2rem",
+                display: "flex",
+                justifyContent: { xs: "center", sm: "center" },
               }}
             >
               <Button
@@ -168,7 +183,12 @@ const LandingPage = () => {
       </Box>
       <Box sx={{ width: "100%", padding: "3rem 0 0 0" }}>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography sx={{ color: "#fff", fontSize: "2.7em" }}>
+          <Typography
+            sx={{
+              color: "#fff",
+              fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
+            }}
+          >
             Success in <span style={{ color: "#1685EC" }}>Motion</span> – Our
             clients’ journey
           </Typography>
@@ -201,8 +221,8 @@ const LandingPage = () => {
                       <Image
                         src={slidePic?.pic}
                         alt={slidePic?.pic}
-                        width={350}
-                        height={300}
+                        width={matchesOne ? 400 : matchesTwo ? 450 : 350}
+                        height={matchesOne ? 250 : matchesTwo ? 250 : 300}
                         // style={{ paddingRight: "1rem" }}
                       />
                     </div>
@@ -247,8 +267,8 @@ const LandingPage = () => {
                       <Image
                         src={slidePic?.pic}
                         alt={slidePic?.pic}
-                        width={350}
-                        height={300}
+                        width={matchesOne ? 400 : matchesTwo ? 450 : 350}
+                        height={matchesOne ? 250 : matchesTwo ? 250 : 300}
                         // style={{ paddingRight: "1rem" }}
                       />
                     </div>
@@ -271,8 +291,8 @@ const LandingPage = () => {
         <Typography
           sx={{
             color: "#fff",
-            fontSize: "2.7em",
-            width: "70%",
+            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
+            width: { lg: "70%", md: "80%", sm: "90%", xs: "90%" },
             textAlign: "center",
           }}
         >

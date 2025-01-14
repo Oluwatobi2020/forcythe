@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Tabs, Tab, Box, Card, Grid2, Stack, Typography } from "@mui/material";
 import Image from "next/image";
@@ -63,13 +63,15 @@ const TransformStories = () => {
           sx={{
             borderBottom: 1,
             borderColor: "divider",
-            width: "100%",
+            // width: "100%",
           }}
         >
           <Tabs
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
+            variant="scrollable"
+            scrollButtons="auto"
             sx={{
               display: "flex",
               justifyContent: "flex-start", // Align tabs to the left
@@ -93,7 +95,7 @@ const TransformStories = () => {
                 {...a11yProps(index)}
                 sx={{
                   color: "#fff !important",
-                  width: "200px",
+                  // width: "200px",
                   background: value === index ? "#0C2645" : "",
                   borderRadius:
                     index === 0
@@ -122,7 +124,7 @@ const TransformStories = () => {
                   backgroundColor: "#0C2645",
                   padding: "2rem",
                   borderRadius: "30px",
-                  width: "477px", // Ensure consistent width
+                  width: { lg: "477px", md: "427px", sm: "377px", xs: "377px" }, // Ensure consistent width
                   height: "380px",
                   marginLeft: 0, // Align to the left
                 }}
