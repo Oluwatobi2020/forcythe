@@ -121,7 +121,7 @@ const LandingPage = () => {
                   sm: "center",
                   xs: "center",
                 },
-                lineHeight: "5rem",
+                lineHeight: { lg: "5rem", md: "5rem", sm: "3rem", xs: "3rem" },
               }}
             >
               We build <span style={{ color: "#1685EC" }}>products</span> that
@@ -322,7 +322,7 @@ const LandingPage = () => {
           sx={{
             color: "#fff",
             fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
-            width: { lg: "70%", md: "80%", sm: "90%", xs: "90%" },
+            width: { lg: "70%", md: "90%", sm: "75%", xs: "75%" },
             textAlign: { lg: "left", md: "left", sm: "center", xs: "center" },
           }}
         >
