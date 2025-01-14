@@ -9,6 +9,7 @@ import {
   Stack,
   Typography,
   Button,
+  useMediaQuery,
 } from "@mui/material";
 import Image from "next/image";
 import { spotlightData } from "@/helpers/transformData";
@@ -45,6 +46,8 @@ function a11yProps(index) {
 
 const Spotlight = () => {
   const [value, setValue] = React.useState(0);
+  const matchesOne = useMediaQuery("(max-width:600px)");
+  const matchesTwo = useMediaQuery("(max-width:470px)");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -66,8 +69,8 @@ const Spotlight = () => {
           sx={{
             // borderBottom: 1,
             borderColor: "divider",
-            width: { lg: "38%", md: "40%", sm: "60%", xs: "60%" },
-            padding:"0 0 0 1rem"
+            width: { lg: "38%", md: "40%", sm: "95%", xs: "95%" },
+            padding: "0 0 0 1rem",
           }}
         >
           <Tabs
@@ -119,21 +122,41 @@ const Spotlight = () => {
                     width: "100%",
                     display: "flex",
                     alignItems: "center",
-                    marginTop:"-4rem"
+                    marginTop: {
+                      lg: "-4rem",
+                      md: "-4rem",
+                      sm: "0rem",
+                      xs: "0rem",
+                    },
                   }}
                   container
                   spacing={2}
                 >
-                  <Grid2 size={6}>
+                  <Grid2 size={{ lg: 6, md: 6, sm: 12, xs: 12 }}>
                     <Stack>
                       <Typography
                         sx={{
-                          fontSize: "2em",
+                          fontSize: {
+                            lg: "2em",
+                            md: "1.8em",
+                            sm: "1.3em",
+                            xs: "1.3em",
+                          },
                           color: "#fff",
-                          textAlign: "left",
+                          textAlign: {
+                            lg: "left",
+                            md: "left",
+                            sm: "center",
+                            xs: "center",
+                          },
                           padding: "0 0 3rem 0",
                           fontWeight: "700",
-                          width: "70%",
+                          width: {
+                            lg: "70%",
+                            md: "80%",
+                            sm: "100%",
+                            xs: "100%",
+                          },
                         }}
                       >
                         {title}
@@ -142,8 +165,18 @@ const Spotlight = () => {
                         sx={{
                           color: "#B2B2B2",
                           fontSize: "1.3em",
-                          textAlign: "left",
-                          width: "80%",
+                          textAlign: {
+                            lg: "left",
+                            md: "left",
+                            sm: "center",
+                            xs: "center",
+                          },
+                          width: {
+                            lg: "80%",
+                            md: "80%",
+                            sm: "100%",
+                            xs: "100%",
+                          },
                         }}
                       >
                         {desc}
@@ -151,7 +184,7 @@ const Spotlight = () => {
                     </Stack>
                   </Grid2>
                   <Grid2
-                    size={6}
+                    size={{ lg: 6, md: 6, sm: 12, xs: 12 }}
                     sx={{
                       display: "flex",
                       justifyContent: "center",
@@ -161,15 +194,26 @@ const Spotlight = () => {
                     <Image
                       src={illustration}
                       alt={title}
-                      width={500}
-                      height={400}
+                      width={matchesOne ? 300 : matchesTwo ? 300 : 500}
+                      height={matchesOne ? 300 : matchesTwo ? 300 : 400}
                     />
                   </Grid2>
                 </Grid2>
               </CustomTabPanel>
             );
           })}
-          <Box sx={{ marginLeft: "1rem" }}>
+          <Box
+            sx={{
+              marginLeft: {
+                lg: "1rem",
+                md: "1rem",
+                // sm: "0",
+                // xs: "0",
+              },
+              display: "flex",
+              justifyContent: { sm: "center", xs: "center" },
+            }}
+          >
             <Button
               sx={{
                 fontFamily: "Outfit, serif",
@@ -179,7 +223,12 @@ const Spotlight = () => {
                 fontWeight: 600,
                 color: "primary.main",
                 fontSize: "1.1em",
-                marginTop: "-5rem",
+                marginTop: {
+                  lg: "-5rem",
+                  md: "-4.5rem",
+                  sm: "0rem",
+                  xs: "0rem",
+                },
                 "&:hover": {
                   background: "#064386",
                   color: "#fff",

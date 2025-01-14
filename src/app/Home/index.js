@@ -321,9 +321,9 @@ const LandingPage = () => {
         <Typography
           sx={{
             color: "#fff",
-            fontSize: "2.7em",
-            width: "70%",
-            textAlign: "left",
+            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
+            width: { lg: "70%", md: "80%", sm: "90%", xs: "90%" },
+            textAlign: { lg: "left", md: "left", sm: "center", xs: "center" },
           }}
         >
           From <span style={{ color: "#1685EC" }}>Spark</span> to{" "}
@@ -355,7 +355,7 @@ const LandingPage = () => {
         <Typography
           sx={{
             color: "#B3D0F2",
-            fontSize: "2.7em",
+            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
             width: "100%",
             textAlign: "center",
           }}
