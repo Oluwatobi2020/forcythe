@@ -678,171 +678,180 @@ const LandingPage = () => {
             </Button>
           </Grid2>
         </Grid2>
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: { sm: "column", xs: "column", md: "row", lg: "row" },
-            paddingTop: { lg: "3rem", md: "3rem" },
-          }}
-        >
-          {blogCard?.map((cardDatas) => {
-            return (
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: { sm: "column", xs: "column", md: "row", lg: "row" },
+          paddingTop: { lg: "3rem", md: "3rem" },
+        }}
+      >
+        {blogCard?.map((cardDatas) => {
+          return (
+            <Grid2
+              container
+              // spacing={2}
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              key={cardDatas?.id}
+            >
               <Grid2
-                container
-                // spacing={2}
+                size={{ lg: 4, md: 4, sm: 12, xs: 12 }}
                 sx={{
-                  width: "100%",
+                  paddingTop: { sm: "2rem", xs: "2rem" },
                   display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  justifyContent: {sm:"center", xs:"center"},
                 }}
-                key={cardDatas?.id}
               >
-                <Grid2 size={4} sx={{ paddingTop: { sm: "2rem", xs: "2rem" } }}>
-                  <Card
+                <Card
+                  sx={{
+                    // maxWidth: 345,
+                    width: "330px",
+                    height: "400px",
+                    background: "#030516",
+                    borderRadius: "30px",
+                    "&:hover": {
+                      borderBottom: "1px solid #fff",
+                    },
+                  }}
+                >
+                  <CardMedia
                     sx={{
-                      // maxWidth: 345,
-                      width: "330px",
-                      height: "400px",
-                      background: "#030516",
-                      borderRadius: "30px",
+                      height: 180,
                       "&:hover": {
-                        borderBottom: "1px solid #fff",
+                        height: 200,
                       },
                     }}
-                  >
-                    <CardMedia
+                    image={cardDatas?.cardImg.src}
+                    title="blog-pics"
+                  />
+                  <CardContent>
+                    <Box
                       sx={{
-                        height: 180,
+                        borderLeft: "1px solid #fff",
+                        paddingLeft: "0.5rem",
                         "&:hover": {
-                          height: 200,
+                          paddingLeft: "1.2rem",
                         },
                       }}
-                      image={cardDatas?.cardImg.src}
-                      title="blog-pics"
-                    />
-                    <CardContent>
-                      <Box
+                    >
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        sx={{ color: "#fff" }}
+                      >
+                        {cardDatas?.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: "#fff", fontSize: "1em" }}
+                      >
+                        The Reformist <GoDotFill /> May 29th, 2024
+                      </Typography>
+                      <Typography
+                        variant="body2"
                         sx={{
-                          borderLeft: "1px solid #fff",
-                          paddingLeft: "0.5rem",
-                          "&:hover": {
-                            paddingLeft: "1.2rem",
-                          },
+                          color: "#fff",
+                          fontSize: "1.3em",
+                          paddingTop: "1rem",
                         }}
                       >
-                        <Typography
-                          gutterBottom
-                          variant="h5"
-                          component="div"
-                          sx={{ color: "#fff" }}
-                        >
-                          {cardDatas?.title}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{ color: "#fff", fontSize: "1em" }}
-                        >
-                          The Reformist <GoDotFill /> May 29th, 2024
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: "#fff",
-                            fontSize: "1.3em",
-                            paddingTop: "1rem",
-                          }}
-                        >
-                          {cardDatas?.body}
-                        </Typography>
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </Grid2>
+                        {cardDatas?.body}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
               </Grid2>
-            );
-          })}
-        </Box>
+            </Grid2>
+          );
+        })}
+      </Box>
 
-        <Box
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          paddingTop: "4rem",
+        }}
+      >
+        <Stack
           sx={{
-            width: "100%",
             display: "flex",
             justifyContent: "center",
-            paddingTop: "4rem",
+            alignItems: "center",
           }}
         >
-          <Stack
+          <Typography
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              color: "#1685EC",
+              fontSize: {
+                lg: "2.7em",
+                md: "2.4em",
+                sm: "1.3em",
+                xs: "1em",
+              },
+              textAlign: "center",
             }}
           >
-            <Typography
+            Ready to Scale?
+          </Typography>
+          <Typography
+            sx={{
+              color: "#fff",
+              fontSize: {
+                lg: "2.7em",
+                md: "2.4em",
+                sm: "1.3em",
+                xs: "1em",
+              },
+              textAlign: "center",
+              width: { lg: "70%", md: "80%", sm: "100%", xs: "100%" },
+            }}
+          >
+            Join successful brands that chose us as their growth accelerator
+          </Typography>
+          <Box
+            sx={{
+              // border: "1px dashed #fff",
+              // padding: "0 0 0.3rem 0.5rem",
+              // borderRadius: "40px",
+              // "&:hover": {
+              //   border: "1px dashed #064386",
+              // },
+              paddingTop: "2rem",
+            }}
+          >
+            <Button
               sx={{
-                color: "#1685EC",
-                fontSize: {
-                  lg: "2.7em",
-                  md: "2.4em",
-                  sm: "1.3em",
-                  xs: "1em",
+                fontFamily: "Outfit, serif",
+                background: "#fff",
+                borderRadius: "40px",
+                padding: "0.5rem 1.5rem 0.5rem 1.5rem",
+                fontWeight: 600,
+                color: "primary.main",
+                fontSize: "1.1em",
+                "&:hover": {
+                  background: "#064386",
+                  color: "#fff",
                 },
-                textAlign: "center",
               }}
             >
-              Ready to Scale?
-            </Typography>
-            <Typography
-              sx={{
-                color: "#fff",
-                fontSize: {
-                  lg: "2.7em",
-                  md: "2.4em",
-                  sm: "1.3em",
-                  xs: "1em",
-                },
-                textAlign: "center",
-                width: { lg: "70%", md: "80%", sm: "100%", xs: "100%" },
-              }}
-            >
-              Join successful brands that chose us as their growth accelerator
-            </Typography>
-            <Box
-              sx={{
-                // border: "1px dashed #fff",
-                // padding: "0 0 0.3rem 0.5rem",
-                // borderRadius: "40px",
-                // "&:hover": {
-                //   border: "1px dashed #064386",
-                // },
-                paddingTop: "2rem",
-              }}
-            >
-              <Button
-                sx={{
-                  fontFamily: "Outfit, serif",
-                  background: "#fff",
-                  borderRadius: "40px",
-                  padding: "0.5rem 1.5rem 0.5rem 1.5rem",
-                  fontWeight: 600,
-                  color: "primary.main",
-                  fontSize: "1.1em",
-                  "&:hover": {
-                    background: "#064386",
-                    color: "#fff",
-                  },
-                }}
-              >
-                Book a call
-              </Button>
-            </Box>
-          </Stack>
-        </Box>
+              Book a call
+            </Button>
+          </Box>
+        </Stack>
       </Box>
-      <Box sx={{ padding: { lg: "6rem", md: "6rem", sm: "2rem", xs: "0.5rem" } }}>
+      <Box
+        sx={{ padding: { lg: "6rem", md: "6rem", sm: "2rem", xs: "0.5rem" } }}
+      >
         <Footer />
       </Box>
     </div>
