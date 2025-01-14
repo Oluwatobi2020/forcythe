@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Tabs, Tab, Box, Card, Grid2, Stack, Typography } from "@mui/material";
+import {
+  Tabs,
+  Tab,
+  Box,
+  Card,
+  Grid2,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import Image from "next/image";
 import { transformData } from "@/helpers/transformData";
 
@@ -35,6 +44,8 @@ function a11yProps(index) {
 
 const TransformStories = () => {
   const [value, setValue] = useState(0);
+  const matchesOne = useMediaQuery("(max-width:960px)");
+  const matchesTwo = useMediaQuery("(max-width:600px)");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -70,7 +81,7 @@ const TransformStories = () => {
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
-            variant="scrollable"
+            variant="fullwidth"
             scrollButtons="auto"
             sx={{
               display: "flex",
@@ -114,7 +125,9 @@ const TransformStories = () => {
         <Box
           sx={{
             marginTop: "1rem", // Space between tabs and cards
-            width: "100%", // Match the width of the tabs
+            width: "100%",
+            display: "flex",
+            justifyContent: { sm: "center", xs: "center" }, // Match the width of the tabs
           }}
         >
           {transformData?.map((cardData, index) => (
@@ -122,7 +135,7 @@ const TransformStories = () => {
               <Card
                 sx={{
                   backgroundColor: "#0C2645",
-                  padding: "2rem",
+                  padding: { lg: "2rem", md: "1.5rem", sm: "1rem", xs: "1rem" },
                   borderRadius: "30px",
                   width: { lg: "477px", md: "427px", sm: "377px", xs: "377px" }, // Ensure consistent width
                   height: "380px",
@@ -153,7 +166,12 @@ const TransformStories = () => {
                         sx={{
                           textAlign: "left",
                           color: "#fff",
-                          fontSize: "1em",
+                          fontSize: {
+                            lg: "1em",
+                            md: "1em",
+                            sm: "0.7em",
+                            xs: "0.7em",
+                          },
                           paddingBottom: "1.3rem",
                         }}
                       >
@@ -176,13 +194,14 @@ const TransformStories = () => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      padding: "1rem",
                     }}
                   >
                     <Image
                       src={cardData?.image}
                       alt="Sample Image"
-                      width={180}
-                      height={300}
+                      width={matchesOne ? 150 : matchesTwo ? 120 : 180}
+                      height={matchesOne ? 270 : matchesTwo ? 240 : 300}
                     />
                   </Grid2>
                 </Grid2>

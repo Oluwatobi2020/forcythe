@@ -114,7 +114,7 @@ const LandingPage = () => {
             <Typography
               sx={{
                 color: "#fff",
-                fontSize: { lg: "5.5em", md: "4.5em", sm: "3em", xs: "2em" },
+                fontSize: { lg: "5.5em", md: "4.5em", sm: "2", xs: "1.5em" },
                 textAlign: {
                   lg: "left",
                   md: "left",
@@ -186,7 +186,7 @@ const LandingPage = () => {
           <Typography
             sx={{
               color: "#fff",
-              fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
+              fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1em" },
             }}
           >
             Success in <span style={{ color: "#1685EC" }}>Motion</span> – Our
@@ -291,7 +291,7 @@ const LandingPage = () => {
         <Typography
           sx={{
             color: "#fff",
-            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
+            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1em" },
             width: { lg: "70%", md: "80%", sm: "90%", xs: "90%" },
             textAlign: "center",
           }}
@@ -314,15 +314,17 @@ const LandingPage = () => {
       <Box
         sx={{
           width: "100%",
-          padding: "3rem 0 0 7rem",
+          padding: { lg: "3rem 0 0 7rem", md: "3rem 0 0 7rem", sm: "0" },
+          display: "flex",
+          justifyContent: "center",
           // marginTop: "-6rem",
         }}
       >
         <Typography
           sx={{
             color: "#fff",
-            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
-            width: { lg: "70%", md: "90%", sm: "75%", xs: "75%" },
+            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.3em", xs: "1em" },
+            width: { lg: "70%", md: "90%", sm: "90%", xs: "90%" },
             textAlign: { lg: "left", md: "left", sm: "center", xs: "center" },
           }}
         >
@@ -345,7 +347,7 @@ const LandingPage = () => {
       <Box
         sx={{
           width: "100%",
-          padding: "3rem 0 0 3rem",
+          padding: "3rem 3rem 0 3rem",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -355,7 +357,7 @@ const LandingPage = () => {
         <Typography
           sx={{
             color: "#B3D0F2",
-            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1.5em" },
+            fontSize: { lg: "2.7em", md: "2.4em", sm: "1.5em", xs: "1em" },
             width: "100%",
             textAlign: "center",
           }}
@@ -638,7 +640,7 @@ const LandingPage = () => {
                   lg: "2.7em",
                   md: "2.4em",
                   sm: "1.5em",
-                  xs: "1.5em",
+                  xs: "1em",
                 },
               }}
             >
@@ -680,18 +682,20 @@ const LandingPage = () => {
           sx={{
             width: "100%",
             display: "flex",
-            flexDirection: { sm: "column", xs: "column" },
-            paddingTop: "3rem",
+            justifyContent: "center",
+            flexDirection: { sm: "column", xs: "column", md: "row", lg: "row" },
+            paddingTop: { lg: "3rem", md: "3rem" },
           }}
         >
           {blogCard?.map((cardDatas) => {
             return (
               <Grid2
                 container
-                spacing={2}
+                // spacing={2}
                 sx={{
                   width: "100%",
                   display: "flex",
+                  justifyContent: "center",
                   alignItems: "center",
                 }}
                 key={cardDatas?.id}
@@ -783,8 +787,8 @@ const LandingPage = () => {
                 fontSize: {
                   lg: "2.7em",
                   md: "2.4em",
-                  sm: "1.5em",
-                  xs: "1.5em",
+                  sm: "1.3em",
+                  xs: "1em",
                 },
                 textAlign: "center",
               }}
@@ -797,11 +801,11 @@ const LandingPage = () => {
                 fontSize: {
                   lg: "2.7em",
                   md: "2.4em",
-                  sm: "1.5em",
-                  xs: "1.5em",
+                  sm: "1.3em",
+                  xs: "1em",
                 },
                 textAlign: "center",
-                width: { lg: "70%", md: "80%", sm: "90%", xs: "90%" },
+                width: { lg: "70%", md: "80%", sm: "100%", xs: "100%" },
               }}
             >
               Join successful brands that chose us as their growth accelerator
@@ -838,7 +842,7 @@ const LandingPage = () => {
           </Stack>
         </Box>
       </Box>
-      <Box sx={{ padding: "6rem" }}>
+      <Box sx={{ padding: { lg: "6rem", md: "6rem", sm: "2rem", xs: "0.5rem" } }}>
         <Footer />
       </Box>
     </div>
