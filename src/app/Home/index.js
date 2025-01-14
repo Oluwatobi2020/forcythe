@@ -379,7 +379,7 @@ const LandingPage = () => {
           sx={{
             width: "100%",
             display: "flex",
-            flexDirection: { sm: "column", xs: "column" },
+            flexDirection: { sm: "column", xs: "column", md: "row", lg: "row" },
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -702,11 +702,11 @@ const LandingPage = () => {
               key={cardDatas?.id}
             >
               <Grid2
-                size={{ lg: 4, md: 4, sm: 12, xs: 12 }}
+                // size={{ lg: 4, md: 4, sm: 12, xs: 12 }}
                 sx={{
                   paddingTop: { sm: "2rem", xs: "2rem" },
                   display: "flex",
-                  justifyContent: {sm:"center", xs:"center"},
+                  justifyContent: { sm: "center", xs: "center" },
                 }}
               >
                 <Card
